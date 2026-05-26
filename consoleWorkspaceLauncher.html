@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Console Workspace Launcher" icon-name="utility:open_folder">
+        <div class="slds-p-around_medium">
+
+            <p class="slds-text-body_regular slds-m-bottom_medium">
+                Use this launcher to open Salesforce console tabs from a Lightning Web Component.
+            </p>
+
+            <lightning-button
+                label="Open Account List"
+                variant="brand"
+                onclick={openAccountList}>
+            </lightning-button>
+
+            <lightning-button
+                class="slds-m-left_small"
+                label="Open Case List"
+                onclick={openCaseList}>
+            </lightning-button>
+
+            <lightning-button
+                class="slds-m-left_small"
+                label="Rename Current Tab"
+                onclick={renameCurrentTab}>
+            </lightning-button>
+
+            <template if:true={message}>
+                <div class="slds-box slds-theme_success slds-m-top_medium">
+                    {message}
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-box slds-theme_error slds-m-top_medium">
+                    {error}
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
